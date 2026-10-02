@@ -1,0 +1,121 @@
+# Maigret
+
+Collect a dossier on a person by username from 6K websites.
+
+## Source
+
+- Repository: https://github.com/soxoj/maigret
+- License: MIT
+
+## Install
+
+```bash
+otinstaller install maigret
+```
+
+otinstaller installs the pip package `maigret` pinned to version `0.6.6` in a dedicated virtualenv.
+
+## Credentials
+
+No API keys needed.
+
+## Input types
+
+| Input | Typed input | Tool arguments |
+| --- | --- | --- |
+| username (`u`) | `u:exampleuser` | `exampleuser` (positional) |
+
+## Example output
+
+```text
+example output for maigret:
+------------------------------------------------------------
+[+] Searching for username: exampleuser
+[+] Found 85 accounts across 1500+ sites
+
+[+] Social Networks
+    Facebook: https://facebook.com/exampleuser
+    Twitter: https://twitter.com/exampleuser
+    Instagram: https://instagram.com/exampleuser
+    LinkedIn: https://linkedin.com/in/exampleuser
+    GitHub: https://github.com/exampleuser
+    Reddit: https://reddit.com/user/exampleuser
+    YouTube: https://youtube.com/@exampleuser
+    TikTok: https://tiktok.com/@exampleuser
+    Pinterest: https://pinterest.com/exampleuser
+    Snapchat: https://snapchat.com/add/exampleuser
+
+[+] Professional
+    LinkedIn: https://linkedin.com/in/exampleuser
+    GitHub: https://github.com/exampleuser
+    StackOverflow: https://stackoverflow.com/users/12345/exampleuser
+    Dev.to: https://dev.to/exampleuser
+    Medium: https://medium.com/@exampleuser
+    Behance: https://behance.net/exampleuser
+    Dribbble: https://dribbble.com/exampleuser
+    Product Hunt: https://producthunt.com/@exampleuser
+
+[+] Creative
+    Instagram: https://instagram.com/exampleuser
+    DeviantArt: https://deviantart.com/exampleuser
+    ArtStation: https://artstation.com/exampleuser
+    500px: https://500px.com/exampleuser
+    Flickr: https://flickr.com/people/exampleuser
+    VSCO: https://vsco.co/exampleuser
+    500px: https://500px.com/exampleuser
+
+[+] Gaming
+    Steam: https://steamcommunity.com/id/exampleuser
+    Xbox: https://xboxgamertag.com/search/exampleuser
+    PlayStation: https://psnprofiles.com/exampleuser
+    Epic Games: https://epicgames.com/id/exampleuser
+    Battle.net: https://battle.net/profile/exampleuser
+    Origin: https://origin.com/exampleuser
+    Uplay: https://uplay.example.com/exampleuser
+    Epic Games: https://epicgames.com/id/exampleuser
+
+[+] Music & Audio
+    Spotify: https://open.spotify.com/user/exampleuser
+    SoundCloud: https://soundcloud.com/exampleuser
+    Bandcamp: https://exampleuser.bandcamp.com
+    Last.fm: https://last.fm/user/exampleuser
+    Mixcloud: https://mixcloud.com/exampleuser
+    HearThis: https://hearthis.at/exampleuser
+
+[+] Video & Streaming
+    YouTube: https://youtube.com/@exampleuser
+    Twitch: https://twitch.tv/exampleuser
+    Vimeo: https://vimeo.com/exampleuser
+    Dailymotion: https://dailymotion.com/exampleuser
+    PeerTube: https://peertube.example.com/@exampleuser
+    DTube: https://d.tube/#!/c/exampleuser
+
+[+] Forums & Communities
+    Reddit: https://reddit.com/user/exampleuser
+    Quora: https://quora.com/profile/exampleuser
+    StackOverflow: https://stackoverflow.com/users/12345/exampleuser
+    Hacker News: https://news.ycombinator.com/user?id=exampleuser
+    Product Hunt: https://producthunt.com/@exampleuser
+    Indie Hackers: https://indiehackers.com/exampleuser
+    Dev.to: https://dev.to/exampleuser
+    Hashnode: https://hashnode.com/@exampleuser
+
+------------------------------------------------------------
+(Example truncated - real output contains 85 sites found across 1500+ sites checked)
+```
+
+## Run
+
+Plain arguments after `--` are passed to the tool unchanged:
+
+```bash
+otinstaller run maigret -- exampleuser
+```
+
+Typed inputs are mapped to this tool's flags:
+
+```bash
+otinstaller run maigret u:exampleuser
+```
+
+Results are saved to `./results/maigret/<target>/`.
