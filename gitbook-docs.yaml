@@ -1,0 +1,18 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+version: 1
+site:
+  title: otinstaller
+  structure:
+    - type: space
+      key: space-introduction
+      title: Introduction
+      path: /
+      default: true
+      content:
+        directory: .
+    - type: space
+      key: space-tools
+      title: Tools
+      path: tools
+      content:
+        directory: ./tools
