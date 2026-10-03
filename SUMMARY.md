@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [Getting started](getting-started.md)
-* [Changelog](changelog.md)
 
 ## Tools
 
@@ -35,6 +34,7 @@
 * [Instagram Monitor](tools/instagram-monitor.md)
 * [Mailaccess](tools/mailaccess.md)
 * [Secator](tools/secator.md)
+* [Sublist3r](tools/sublist3r.md)
 * [Socid Extractor](tools/socid-extractor.md)
 * [Dnsgen](tools/dnsgen.md)
 * [Sitedorks](tools/sitedorks.md)
