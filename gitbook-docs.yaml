@@ -5,7 +5,7 @@ site:
     - type: space
       key: space-introduction
       title: Introduction
-      path: undefined
+      path: introduction
       default: true
       content:
         directory: ./
