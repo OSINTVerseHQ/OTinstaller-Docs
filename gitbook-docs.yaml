@@ -1,15 +1,14 @@
 $schema: https://api.gitbook.com/gitbook-docs.yaml
-version: 1
 site:
-  title: otinstaller
+  title: OTInstaller Docs
   structure:
     - type: space
       key: space-introduction
       title: Introduction
-      path: /
+      path: undefined
       default: true
       content:
-        directory: .
+        directory: ./
     - type: space
       key: space-tools
       title: Tools
