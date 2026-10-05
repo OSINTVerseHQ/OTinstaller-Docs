@@ -1,4 +1,4 @@
-# otinstaller
+# OTinstaller
 
 otinstaller is a command line tool manager for Linux. It installs, runs, updates,
 and removes open-source command line tools by name, each in its own virtualenv,
