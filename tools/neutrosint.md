@@ -13,7 +13,7 @@ Check if an email address or username exists on ProtonMail.
 otinstaller install neutrosint
 ```
 
-otinstaller clones `https://github.com/Kr0wZ/NeutrOSINT.git` into a dedicated virtualenv, then installs the clone itself as a package.
+otinstaller clones `https://github.com/Kr0wZ/NeutrOSINT.git` at ref `a51a133444c366ea3a60a8c400a3624625d79e6d` into a dedicated virtualenv, then installs the clone itself as a package.
 
 ## Credentials
 

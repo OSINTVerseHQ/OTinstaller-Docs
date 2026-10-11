@@ -13,7 +13,7 @@ All In One Web Recon.
 otinstaller install finalrecon
 ```
 
-otinstaller clones `https://github.com/thewhiteh4t/FinalRecon.git` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
+otinstaller clones `https://github.com/thewhiteh4t/FinalRecon.git` at ref `b5db3a46921195bec643065c560e19741852957c` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
 
 ## Credentials
 

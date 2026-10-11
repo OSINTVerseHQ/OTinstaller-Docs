@@ -13,7 +13,7 @@ Find email addresses of GitHub users, repositories and organizations.
 otinstaller install zen
 ```
 
-otinstaller clones `https://github.com/s0md3v/Zen.git` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
+otinstaller clones `https://github.com/s0md3v/Zen.git` at ref `b9018b4b74eb0cb64d5a61ff00cdd413cf5d7733` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
 
 ## Credentials
 

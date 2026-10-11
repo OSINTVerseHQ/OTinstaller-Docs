@@ -13,7 +13,7 @@ Find emails, subdomains and names for a domain
 otinstaller install theharvester
 ```
 
-otinstaller clones `https://github.com/laramies/theHarvester.git` at ref `4.11.1` into a dedicated virtualenv, then installs the clone itself as a package.
+otinstaller clones `https://github.com/laramies/theHarvester.git` at ref `fd832dee7936458a4f6e2029bf37ba6797228676` into a dedicated virtualenv, then installs the clone itself as a package.
 
 ## Credentials
 

@@ -13,7 +13,7 @@ Find usernames across social networks.
 otinstaller install thebigbrother
 ```
 
-otinstaller clones `https://github.com/chadi0x/TheBigBrother.git` into a dedicated virtualenv, then installs the clone itself as a package.
+otinstaller clones `https://github.com/chadi0x/TheBigBrother.git` at ref `96e03c34d415aaeaddd66d54bb2e2359d4b320fc` into a dedicated virtualenv, then installs the clone itself as a package.
 
 ## Credentials
 

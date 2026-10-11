@@ -13,7 +13,7 @@ Abusing Certificate Transparency logs for getting HTTPS websites subdomains.
 otinstaller install ctfr
 ```
 
-otinstaller clones `https://github.com/UnaPibaGeek/ctfr.git` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
+otinstaller clones `https://github.com/UnaPibaGeek/ctfr.git` at ref `6c7fecdc6346c4f5322049e38f415d5bddaa420d` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
 
 ## Credentials
 

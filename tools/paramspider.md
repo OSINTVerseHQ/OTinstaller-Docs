@@ -13,7 +13,7 @@ Mining URLs from dark corners of Web Archives for bug hunting/fuzzing/further pr
 otinstaller install paramspider
 ```
 
-otinstaller clones `https://github.com/devanshbatham/ParamSpider.git` into a dedicated virtualenv, then installs the clone itself as a package.
+otinstaller clones `https://github.com/devanshbatham/ParamSpider.git` at ref `c44bdaae54789b237028e309b603d1aa5ad52e5e` into a dedicated virtualenv, then installs the clone itself as a package.
 
 ## Credentials
 

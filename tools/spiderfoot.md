@@ -13,7 +13,7 @@ SpiderFoot automates OSINT for threat intelligence and mapping your attack surfa
 otinstaller install spiderfoot
 ```
 
-otinstaller clones `https://github.com/smicallef/spiderfoot.git` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
+otinstaller clones `https://github.com/smicallef/spiderfoot.git` at ref `0f815a203afebf05c98b605dba5cf0475a0ee5fd` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
 
 ## Credentials
 

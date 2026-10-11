@@ -13,7 +13,7 @@ OSINT tool to search for accounts by username and email across social networks.
 otinstaller install blackbird
 ```
 
-otinstaller clones `https://github.com/p1ngul1n0/blackbird.git` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
+otinstaller clones `https://github.com/p1ngul1n0/blackbird.git` at ref `b45505080ef51bb3ef52dc29879ee6bef31e5b94` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
 
 ## Credentials
 

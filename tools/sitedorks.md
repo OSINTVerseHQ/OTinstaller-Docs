@@ -13,7 +13,7 @@ Search Google/Bing/Ecosia/DuckDuckGo/Yandex/Yahoo for a search term (dork) with 
 otinstaller install sitedorks
 ```
 
-otinstaller clones `https://github.com/Zarcolio/sitedorks.git` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
+otinstaller clones `https://github.com/Zarcolio/sitedorks.git` at ref `ce6421a963d50c3b18128052703274552d284d94` into a dedicated virtualenv, then installs the dependencies listed in `requirements.txt`.
 
 ## Credentials
 
