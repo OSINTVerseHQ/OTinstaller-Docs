@@ -24,20 +24,19 @@ No API keys needed.
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
 | domain (`d`) | `d:example.com` | `--domain example.com` |
-| url (`url`) | `url:https://example.com` | `--url https://example.com` |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run paramspider -- --domain example.com --url https://example.com
+otinstaller run paramspider -- --domain example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run paramspider d:example.com url:https://example.com
+otinstaller run paramspider d:example.com
 ```
 
 Results are saved to `./results/paramspider/<target>/`.

@@ -23,9 +23,13 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
+| username (`u`) | `u:exampleuser` | `exampleuser` (positional) |
+
+otinstaller always adds these arguments first: `--level basic --json-stdout --only-found`.
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 aliens_eye v2.5.0 output for testuser (truncated):
@@ -75,7 +79,7 @@ Selected profile (truncated):
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run aliens-eye -- --username exampleuser
+otinstaller run aliens-eye -- --level basic --json-stdout --only-found exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:

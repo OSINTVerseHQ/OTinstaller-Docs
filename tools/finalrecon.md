@@ -23,20 +23,20 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
+| url (`url`) | `url:https://example.com` | `--url https://example.com` |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run finalrecon -- --domain example.com
+otinstaller run finalrecon -- --url https://example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run finalrecon d:example.com
+otinstaller run finalrecon url:https://example.com
 ```
 
 Results are saved to `./results/finalrecon/<target>/`.

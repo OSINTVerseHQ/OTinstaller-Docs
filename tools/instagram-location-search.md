@@ -30,6 +30,8 @@ Keys are stored in `~/.otinstaller/.env`, one `KEY=value` per line. This tool on
 
 ## Example output
 
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
+
 ```text
 Instagram Location Search example
 Coordinates: 32.22 N, 110.97 W

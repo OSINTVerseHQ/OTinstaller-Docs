@@ -32,6 +32,8 @@ After install, otinstaller warns that this tool requires configuration: set thes
 
 ## Example output
 
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
+
 ```text
 Telegram Phone Number Checker example
 Phone: +15551234567

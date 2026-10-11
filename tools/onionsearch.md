@@ -23,20 +23,20 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| url (`url`) | `url:https://example.com` | `--url https://example.com` |
+| query (`q`) | `q:example` | `example` (positional) |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run onionsearch -- --url https://example.com
+otinstaller run onionsearch -- example
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run onionsearch url:https://example.com
+otinstaller run onionsearch q:example
 ```
 
 Results are saved to `./results/onionsearch/<target>/`.

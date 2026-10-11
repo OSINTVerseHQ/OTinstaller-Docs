@@ -23,10 +23,11 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| url (`url`) | `url:https://example.com` | `--url https://example.com` |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
+| url (`url`) | `url:https://example.com` | `-u https://example.com` |
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 TorBot v4.3.0 output for http://example.com (with --disable-socks5):
@@ -49,13 +50,13 @@ Example Domain         http://example.com                     200 OK            
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run torbot -- --url https://example.com --domain example.com
+otinstaller run torbot -- -u https://example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run torbot url:https://example.com d:example.com
+otinstaller run torbot url:https://example.com
 ```
 
 Results are saved to `./results/torbot/<target>/`.

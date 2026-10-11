@@ -19,24 +19,26 @@ otinstaller installs the pip package `toutatis` pinned to version `1.31` in a de
 
 No API keys needed.
 
+This tool still needs manual configuration before the first run.
+
 ## Input types
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| phone (`p`) | `p:+15551234567` | `--phone +15551234567` |
+| username (`u`) | `u:exampleuser` | `--username exampleuser` |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run toutatis -- --phone +15551234567
+otinstaller run toutatis -- --username exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run toutatis p:+15551234567
+otinstaller run toutatis u:exampleuser
 ```
 
 Results are saved to `./results/toutatis/<target>/`.

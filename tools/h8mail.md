@@ -23,9 +23,11 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| email (`e`) | `e:example@example.com` | `--email example@example.com` |
+| email (`e`) | `e:example@example.com` | `-t example@example.com` |
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 h8mail v2.5.6 output for test@example.com:
@@ -55,7 +57,7 @@ Execution time: 1.69 seconds
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run h8mail -- --email example@example.com
+otinstaller run h8mail -- -t example@example.com
 ```
 
 Typed inputs are mapped to this tool's flags:

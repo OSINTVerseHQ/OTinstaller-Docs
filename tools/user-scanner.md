@@ -28,6 +28,8 @@ No API keys needed.
 
 ## Example output
 
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
+
 ```text
 user-scanner v1.5.2 output for testuser (truncated):
 

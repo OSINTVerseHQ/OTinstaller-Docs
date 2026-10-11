@@ -24,20 +24,19 @@ No API keys needed.
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
 | url (`url`) | `url:https://example.com` | `--url https://example.com` |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run socid-extractor -- --url https://example.com --username exampleuser
+otinstaller run socid-extractor -- --url https://example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run socid-extractor url:https://example.com u:exampleuser
+otinstaller run socid-extractor url:https://example.com
 ```
 
 Results are saved to `./results/socid-extractor/<target>/`.

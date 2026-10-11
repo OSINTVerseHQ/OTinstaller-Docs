@@ -23,21 +23,20 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
-| url (`url`) | `url:https://example.com` | `--url https://example.com` |
+| query (`q`) | `q:example` | `-query example` |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run sitedorks -- --domain example.com --url https://example.com
+otinstaller run sitedorks -- -query example
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run sitedorks d:example.com url:https://example.com
+otinstaller run sitedorks q:example
 ```
 
 Results are saved to `./results/sitedorks/<target>/`.

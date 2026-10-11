@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Getting started](getting-started.md)
+* [Changelog](changelog.md)
 
 ## Tools
 
@@ -23,7 +24,6 @@
 * [Paramspider](tools/paramspider.md)
 * [Nexfil](tools/nexfil.md)
 * [Yark](tools/yark.md)
-* [Cloud Enum](tools/cloud-enum.md)
 * [Ignorant](tools/ignorant.md)
 * [Socialscan](tools/socialscan.md)
 * [Fsociety](tools/fsociety.md)

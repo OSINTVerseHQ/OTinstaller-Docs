@@ -19,24 +19,10 @@ otinstaller clones `https://github.com/osintbrazuca/osint-brazuca-regex.git` int
 
 No API keys needed.
 
-## Input types
-
-| Input | Typed input | Tool arguments |
-| --- | --- | --- |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
-
 ## Run
 
-Plain arguments after `--` are passed to the tool unchanged:
-
 ```bash
-otinstaller run osint-brazuca-regex -- --domain example.com
-```
-
-Typed inputs are mapped to this tool's flags:
-
-```bash
-otinstaller run osint-brazuca-regex d:example.com
+otinstaller run osint-brazuca-regex -- --help
 ```
 
 Results are saved to `./results/osint-brazuca-regex/<target>/`.

@@ -24,9 +24,10 @@ No API keys needed.
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
 | email (`e`) | `e:example@example.com` | `--email example@example.com` |
-| username (`u`) | `u:exampleuser` | `--email exampleuser` |
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 example output for neutrosint:
@@ -53,13 +54,13 @@ username and password not specified, using light mode...
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run neutrosint -- --email example@example.com --email exampleuser
+otinstaller run neutrosint -- --email example@example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run neutrosint e:example@example.com u:exampleuser
+otinstaller run neutrosint e:example@example.com
 ```
 
 Results are saved to `./results/neutrosint/<target>/`.

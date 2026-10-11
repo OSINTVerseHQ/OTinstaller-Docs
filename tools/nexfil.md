@@ -23,14 +23,14 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
+| username (`u`) | `u:exampleuser` | `-u exampleuser` |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run nexfil -- --username exampleuser
+otinstaller run nexfil -- -u exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:

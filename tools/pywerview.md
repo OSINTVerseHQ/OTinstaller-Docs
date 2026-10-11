@@ -19,25 +19,10 @@ otinstaller installs the pip package `pywerview` pinned to version `0.7.6` in a 
 
 No API keys needed.
 
-## Input types
-
-| Input | Typed input | Tool arguments |
-| --- | --- | --- |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
-
 ## Run
 
-Plain arguments after `--` are passed to the tool unchanged:
-
 ```bash
-otinstaller run pywerview -- --domain example.com --username exampleuser
-```
-
-Typed inputs are mapped to this tool's flags:
-
-```bash
-otinstaller run pywerview d:example.com u:exampleuser
+otinstaller run pywerview -- --help
 ```
 
 Results are saved to `./results/pywerview/<target>/`.

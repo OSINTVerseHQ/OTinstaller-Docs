@@ -26,9 +26,10 @@ Keys are stored in `~/.otinstaller/.env`, one `KEY=value` per line. This tool on
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
 | domain (`d`) | `d:example.com` | `--domain example.com` |
-| email (`e`) | `e:example@example.com` | `--email example@example.com` |
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 example output for theharvester:
@@ -100,13 +101,13 @@ example output for theharvester:
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run theharvester -- --domain example.com --email example@example.com
+otinstaller run theharvester -- --domain example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run theharvester d:example.com e:example@example.com
+otinstaller run theharvester d:example.com
 ```
 
 Results are saved to `./results/theharvester/<target>/`.

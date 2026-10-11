@@ -23,21 +23,22 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
+| domain (`d`) | `d:example.com` | `-t example.com` |
+
+otinstaller always adds these arguments first: `-y -p subdomain-enum`.
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run bbot -- --domain example.com --username exampleuser
+otinstaller run bbot -- -y -p subdomain-enum -t example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run bbot d:example.com u:exampleuser
+otinstaller run bbot d:example.com
 ```
 
 Results are saved to `./results/bbot/<target>/`.

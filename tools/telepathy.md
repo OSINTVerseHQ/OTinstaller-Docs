@@ -4,7 +4,7 @@ OSINT toolkit for investigating Telegram chats and accounts. Requires Python <3.
 
 ## Source
 
-- Repository: https://github.com/telepathy/telepathy
+- Repository: https://github.com/jordanwildon/Telepathy
 - License: MIT
 
 ## Install
@@ -31,6 +31,8 @@ After install, otinstaller warns that this tool requires configuration: set thes
 | phone (`p`) | `p:+15551234567` | `--phone +15551234567` |
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 Telepathy example

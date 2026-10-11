@@ -19,24 +19,14 @@ otinstaller installs the pip package `whatsapp-osint` pinned to version `2.0.1` 
 
 No API keys needed.
 
-## Input types
+This tool still needs manual configuration before the first run.
 
-| Input | Typed input | Tool arguments |
-| --- | --- | --- |
-| phone (`p`) | `p:+15551234567` | `--phone +15551234567` |
+This tool monitors its target continuously and does not exit on its own. It is never started by `otinstaller run --all` or `otinstaller auto`; run it by name and stop it with Ctrl+C.
 
 ## Run
 
-Plain arguments after `--` are passed to the tool unchanged:
-
 ```bash
-otinstaller run whatsapp-osint -- --phone +15551234567
-```
-
-Typed inputs are mapped to this tool's flags:
-
-```bash
-otinstaller run whatsapp-osint p:+15551234567
+otinstaller run whatsapp-osint -- --help
 ```
 
 Results are saved to `./results/whatsapp-osint/<target>/`.

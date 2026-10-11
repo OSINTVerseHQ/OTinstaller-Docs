@@ -23,21 +23,20 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
-| url (`url`) | `url:https://example.com` | `--url https://example.com` |
+| username (`u`) | `u:exampleuser` | `exampleuser` (positional) |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run instaloader -- --username exampleuser --url https://example.com
+otinstaller run instaloader -- exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run instaloader u:exampleuser url:https://example.com
+otinstaller run instaloader u:exampleuser
 ```
 
 Results are saved to `./results/instaloader/<target>/`.

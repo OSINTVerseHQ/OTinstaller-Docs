@@ -1,6 +1,6 @@
 # Mailaccess
 
-Free email OSINT tool, 2500+ platforms, identity clustering, breach detection.
+Free email OSINT tool, 2500+ platforms, identity clustering, breach detection. BROKEN: crashes on --help (missing greenlet dependency), has placeholder URLs, unknown license.
 
 ## Source
 

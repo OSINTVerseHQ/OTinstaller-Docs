@@ -23,9 +23,11 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| domain (`d`) | `d:example.com` | `--domain example.com` |
+| domain (`d`) | `d:example.com` | `example.com` (positional) |
 
 ## Example output
+
+Illustrative output showing the general shape of a run. Real output depends on the tool version and the target.
 
 ```text
 dnstwist 20250130 output for example.com (truncated):
@@ -55,7 +57,7 @@ various        examplecom.com  54.243.117.197 2600:1f18:4ae:c605:dd5d:b838:5816:
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run dnstwist -- --domain example.com
+otinstaller run dnstwist -- example.com
 ```
 
 Typed inputs are mapped to this tool's flags:

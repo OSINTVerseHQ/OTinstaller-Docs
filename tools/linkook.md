@@ -23,21 +23,20 @@ No API keys needed.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
-| email (`e`) | `e:example@example.com` | `--email example@example.com` |
+| username (`u`) | `u:exampleuser` | `exampleuser` (positional) |
 
 ## Run
 
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run linkook -- --username exampleuser --email example@example.com
+otinstaller run linkook -- exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run linkook u:exampleuser e:example@example.com
+otinstaller run linkook u:exampleuser
 ```
 
 Results are saved to `./results/linkook/<target>/`.
