@@ -2,54 +2,78 @@
 
 * [Introduction](README.md)
 * [Getting started](getting-started.md)
+* [FAQ](faq.md)
 * [Changelog](changelog.md)
 
-## Tools
+## Guides
 
-* [Maigret](tools/maigret.md)
-* [Ghunt](tools/ghunt.md)
-* [theHarvester](tools/theharvester.md)
-* [Spiderfoot](tools/spiderfoot.md)
-* [Instaloader](tools/instaloader.md)
-* [Sherlock](tools/sherlock.md)
-* [Holehe](tools/holehe.md)
-* [Bbot](tools/bbot.md)
-* [Dnstwist](tools/dnstwist.md)
-* [H8Mail](tools/h8mail.md)
-* [User Scanner](tools/user-scanner.md)
-* [Torbot](tools/torbot.md)
-* [Toutatis](tools/toutatis.md)
-* [Ivre](tools/ivre.md)
+* [Typed inputs](guides/typed-inputs.md)
+* [Command reference](guides/commands.md)
+* [Results and resume](guides/results.md)
+* [API keys](guides/api-keys.md)
+* [Responsible use](guides/responsible-use.md)
+
+## Username tools
+
 * [Aliens Eye](tools/aliens-eye.md)
-* [Paramspider](tools/paramspider.md)
-* [Nexfil](tools/nexfil.md)
-* [Yark](tools/yark.md)
-* [Ignorant](tools/ignorant.md)
-* [Socialscan](tools/socialscan.md)
-* [Fsociety](tools/fsociety.md)
-* [Onionsearch](tools/onionsearch.md)
-* [Openosint](tools/openosint.md)
-* [Crosslinked](tools/crosslinked.md)
-* [Whatsapp Osint](tools/whatsapp-osint.md)
-* [Instagram Monitor](tools/instagram-monitor.md)
-* [Mailaccess](tools/mailaccess.md)
-* [Secator](tools/secator.md)
-* [Sublist3r](tools/sublist3r.md)
-* [Socid Extractor](tools/socid-extractor.md)
-* [Dnsgen](tools/dnsgen.md)
-* [Sitedorks](tools/sitedorks.md)
-* [Linkook](tools/linkook.md)
-* [Osint Brazuca Regex](tools/osint-brazuca-regex.md)
-* [Finalrecon](tools/finalrecon.md)
-* [Fierce](tools/fierce.md)
-* [Pywerview](tools/pywerview.md)
-* [Ctfr](tools/ctfr.md)
 * [Blackbird](tools/blackbird.md)
-* [Telegram Phone Number Checker](tools/telegram-phone-number-checker.md)
-* [Auto Archiver](tools/auto-archiver.md)
-* [EDGAR Tool](tools/edgar-tool.md)
-* [Instagram Location Search](tools/instagram-location-search.md)
+* [Crosslinked](tools/crosslinked.md)
+* [Instagram Monitor](tools/instagram-monitor.md)
+* [Instaloader](tools/instaloader.md)
+* [Linkook](tools/linkook.md)
+* [Maigret](tools/maigret.md)
+* [Nexfil](tools/nexfil.md)
+* [Openosint](tools/openosint.md)
+* [Sherlock](tools/sherlock.md)
+* [Socialscan](tools/socialscan.md)
 * [Telepathy](tools/telepathy.md)
-* [NeutrOSINT](tools/neutrosint.md)
-* [Zen](tools/zen.md)
 * [The Big Brother](tools/thebigbrother.md)
+* [User Scanner](tools/user-scanner.md)
+* [Zen](tools/zen.md)
+
+## Email tools
+
+* [Ghunt](tools/ghunt.md)
+* [H8Mail](tools/h8mail.md)
+* [Holehe](tools/holehe.md)
+* [Mailaccess](tools/mailaccess.md)
+* [NeutrOSINT](tools/neutrosint.md)
+
+## Phone tools
+
+* [Ignorant](tools/ignorant.md)
+* [Telegram Phone Number Checker](tools/telegram-phone-number-checker.md)
+* [Toutatis](tools/toutatis.md)
+* [Whatsapp Osint](tools/whatsapp-osint.md)
+
+## Domain tools
+
+* [Bbot](tools/bbot.md)
+* [Ctfr](tools/ctfr.md)
+* [Dnsgen](tools/dnsgen.md)
+* [Dnstwist](tools/dnstwist.md)
+* [Fierce](tools/fierce.md)
+* [Finalrecon](tools/finalrecon.md)
+* [Fsociety](tools/fsociety.md)
+* [Ivre](tools/ivre.md)
+* [Osint Brazuca Regex](tools/osint-brazuca-regex.md)
+* [Paramspider](tools/paramspider.md)
+* [Pywerview](tools/pywerview.md)
+* [Secator](tools/secator.md)
+* [Sitedorks](tools/sitedorks.md)
+* [Spiderfoot](tools/spiderfoot.md)
+* [Sublist3r](tools/sublist3r.md)
+* [theHarvester](tools/theharvester.md)
+
+## URL tools
+
+* [Auto Archiver](tools/auto-archiver.md)
+* [Instagram Location Search](tools/instagram-location-search.md)
+* [Onionsearch](tools/onionsearch.md)
+* [Socid Extractor](tools/socid-extractor.md)
+* [Torbot](tools/torbot.md)
+* [Yark](tools/yark.md)
+
+## Name tools
+
+* [EDGAR Tool](tools/edgar-tool.md)

@@ -231,6 +231,12 @@ You pick a tool by name. OTinstaller installs it, runs it against a target, and
 saves the output under `./results/` with a metadata sidecar file. You do not learn
 a different install method for every tool.
 
+## Watch the launch video
+
+{{% embed url="https://www.youtube.com/watch?v=_AfUGMFRaKA" %}}
+90 seconds: install, typed inputs, auto-detect, parallel runs, results and more.
+{{% endembed %}}
+
 ![Installing and running a tool](images/otinstaller-demo.png)
 
 This site covers {count} tools. The tool list focuses on open-source intelligence
@@ -241,9 +247,13 @@ changes.
 
 - [Getting started](getting-started.md): install OTinstaller, run `otinstaller
   init`, and run your first tool.
+- Guides: [typed inputs](guides/typed-inputs.md), the
+  [command reference](guides/commands.md), [results and resume](guides/results.md),
+  [API keys](guides/api-keys.md) and [responsible use](guides/responsible-use.md).
+- [FAQ](faq.md): Windows and macOS, root, data, uninstalling, legality.
 - [Changelog](changelog.md): what changed in each release.
-- [Tools](SUMMARY.md): one page per tool with source, install method, credentials,
-  input flags, example output, and run commands.
+- Tools: one page per tool, grouped by what it searches, with source, install
+  method, credentials, input flags, example output, and run commands.
 
 ## Links
 
@@ -396,19 +406,98 @@ cleanly, so there is nothing to resume.
 """
 
 
+GUIDES = [
+    ("guides/typed-inputs.md", "Typed inputs", ["Typed inputs", "Run every matching tool"]),
+    ("guides/commands.md", "Command reference", ["Command reference"]),
+    ("guides/results.md", "Results and resume", ["Results", "Resume"]),
+    ("guides/api-keys.md", "API keys", ["API keys"]),
+    ("guides/responsible-use.md", "Responsible use", ["Responsible use"]),
+    ("faq.md", "FAQ", ["FAQ"]),
+]
+README_URL = "https://github.com/OSINTVerseHQ/OTinstaller"
+ANCHORS = {"responsible-use": "guides/responsible-use.md", "faq": "faq.md",
+           "typed-inputs": "guides/typed-inputs.md", "command-reference": "guides/commands.md",
+           "results": "guides/results.md", "resume": "guides/results.md",
+           "api-keys": "guides/api-keys.md", "run-every-matching-tool": "guides/typed-inputs.md"}
+TOOL_GROUPS = [("username", "Username tools"), ("email", "Email tools"), ("phone", "Phone tools"),
+               ("domain", "Domain tools"), ("ip", "IP address tools"), ("url", "URL tools"),
+               ("name", "Name tools")]
+
+
+def readme_sections(text: str) -> dict[str, str]:
+    """Split the main README into its level-2 sections, keyed by heading."""
+    sections: dict[str, str] = {}
+    current = None
+    for line in text.splitlines():
+        if line.startswith("## "):
+            current = line[3:].strip()
+            sections[current] = ""
+        elif current is not None:
+            sections[current] += line + "\n"
+    return {k: v.strip() + "\n" for k, v in sections.items()}
+
+
+def fix_links(body: str, page: str) -> str:
+    """Point README anchor links at the matching docs page, or back at the README."""
+    import os
+    import re
+
+    def repl(m: re.Match) -> str:
+        anchor = m.group(2)
+        target = ANCHORS.get(anchor)
+        if target:
+            rel = os.path.relpath(target, os.path.dirname(page) or ".")
+            return f"{m.group(1)}({rel})"
+        return f"{m.group(1)}({README_URL}#{anchor})"
+
+    return re.sub(r"(\[[^\]]*\])\(#([a-z0-9-]+)\)", repl, body)
+
+
+def guide_pages(readme_text: str) -> dict[str, str]:
+    sections = readme_sections(readme_text)
+    pages = {}
+    for path, title, heads in GUIDES:
+        missing = [h for h in heads if h not in sections]
+        if missing:
+            sys.exit(f"error: README section not found: {missing}")
+        if len(heads) == 1:
+            body = sections[heads[0]]
+        else:
+            body = "\n".join(
+                sections[h] if h == title else f"## {h}\n\n{sections[h]}" for h in heads
+            )
+        note = f"_This page mirrors the [OTinstaller README]({README_URL})._\n"
+        pages[path] = f"# {title}\n\n{fix_links(body, path)}\n{note}"
+    return pages
+
+
 def summary(tools: list[dict]) -> str:
     lines = [
         "# Summary",
         "",
         "* [Introduction](README.md)",
         "* [Getting started](getting-started.md)",
+        "* [FAQ](faq.md)",
         "* [Changelog](changelog.md)",
         "",
-        "## Tools",
+        "## Guides",
         "",
     ]
-    for tool in tools:
-        lines.append(f"* [{tool['display_name']}](tools/{tool['name']}.md)")
+    lines += [f"* [{title}]({path})" for path, title, _ in GUIDES if path.startswith("guides/")]
+    placed = set()
+    for key, label in TOOL_GROUPS:
+        group = sorted((t for t in tools if (t.get("accepts") or [None])[0] == key),
+                       key=lambda t: t["display_name"].lower())
+        if not group:
+            continue
+        lines += ["", f"## {label}", ""]
+        for tool in group:
+            lines.append(f"* [{tool['display_name']}](tools/{tool['name']}.md)")
+            placed.add(tool["name"])
+    rest = sorted((t for t in tools if t["name"] not in placed), key=lambda t: t["display_name"].lower())
+    if rest:
+        lines += ["", "## Other tools", ""]
+        lines += [f"* [{t['display_name']}](tools/{t['name']}.md)" for t in rest]
     return "\n".join(lines) + "\n"
 
 
@@ -425,6 +514,16 @@ def main() -> None:
         type=Path,
         default=Path(__file__).resolve().parent.parent,
         help="output directory (default: repository root)",
+    )
+    parser.add_argument(
+        "--readme",
+        type=Path,
+        help="OTinstaller README.md: guide pages and the FAQ are built from its sections",
+    )
+    parser.add_argument(
+        "--changelog",
+        type=Path,
+        help="OTinstaller CHANGELOG.md: copied to changelog.md",
     )
     args = parser.parse_args()
 
@@ -444,6 +543,12 @@ def main() -> None:
     (out / "SUMMARY.md").write_text(summary(tools))
     for tool in tools:
         (tools_dir / f"{tool['name']}.md").write_text(tool_page(tool, data_dir))
+    if args.readme:
+        for path, text in guide_pages(args.readme.read_text()).items():
+            (out / path).parent.mkdir(parents=True, exist_ok=True)
+            (out / path).write_text(text)
+    if args.changelog:
+        (out / "changelog.md").write_text(args.changelog.read_text())
 
     print(f"wrote {len(tools)} tool pages to {tools_dir}")
 
