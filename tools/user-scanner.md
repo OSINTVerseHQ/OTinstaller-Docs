@@ -13,7 +13,7 @@
 otinstaller install user-scanner
 ```
 
-otinstaller installs the pip package `user-scanner` pinned to version `1.5.2` in a dedicated virtualenv.
+otinstaller installs the pip package `user-scanner` pinned to version `1.5.2.2` in a dedicated virtualenv.
 
 ## Credentials
 

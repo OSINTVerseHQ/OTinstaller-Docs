@@ -13,7 +13,7 @@ Hunt down 840+ social media accounts using AI.
 otinstaller install aliens-eye
 ```
 
-otinstaller installs the pip package `aliens_eye` pinned to version `2.5.0` in a dedicated virtualenv.
+otinstaller installs the pip package `aliens_eye` pinned to version `2.7.0` in a dedicated virtualenv.
 
 ## Credentials
 

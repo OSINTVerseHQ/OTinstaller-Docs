@@ -13,7 +13,7 @@ An OSINT tool for discovering linked social accounts and associated emails acros
 otinstaller install linkook
 ```
 
-otinstaller installs the pip package `linkook` pinned to version `1.1.2` in a dedicated virtualenv.
+otinstaller installs the pip package `linkook` pinned to version `1.1.3` in a dedicated virtualenv.
 
 ## Credentials
 
