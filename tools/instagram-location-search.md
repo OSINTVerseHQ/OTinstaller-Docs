@@ -43,13 +43,15 @@ Locations: Tucson, Arizona
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run instagram-location-search -- --lat 40.7128 --lng -74.0060
+otinstaller run instagram-location-search -- --lat 40.7128
+otinstaller run instagram-location-search -- --lng -74.0060
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run instagram-location-search lat:40.7128 lng:-74.0060
+otinstaller run instagram-location-search lat:40.7128
+otinstaller run instagram-location-search lng:-74.0060
 ```
 
 Results are saved to `./results/instagram-location-search/<target>/`.
