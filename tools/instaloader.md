@@ -13,7 +13,7 @@ Download pictures (or videos) along with their captions and other metadata from 
 otinstaller install instaloader
 ```
 
-otinstaller installs the pip package `instaloader` pinned to version `4.15.3` in a dedicated virtualenv.
+otinstaller installs the pip package `instaloader` pinned to version `4.15.4` in a dedicated virtualenv.
 
 ## Credentials
 
