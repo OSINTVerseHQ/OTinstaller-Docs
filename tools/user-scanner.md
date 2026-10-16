@@ -151,13 +151,15 @@ Checking username: testuser
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run user-scanner -- --username exampleuser --email example@example.com
+otinstaller run user-scanner -- --username exampleuser
+otinstaller run user-scanner -- --email example@example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run user-scanner u:exampleuser e:example@example.com
+otinstaller run user-scanner u:exampleuser
+otinstaller run user-scanner e:example@example.com
 ```
 
 Results are saved to `./results/user-scanner/<target>/`.
