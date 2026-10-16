@@ -19,24 +19,10 @@ otinstaller installs the pip package `dnsgen` pinned to version `1.0.4` in a ded
 
 No API keys needed.
 
-## Input types
-
-| Input | Typed input | Tool arguments |
-| --- | --- | --- |
-| domain (`d`) | `d:example.com` | `example.com` (positional) |
-
 ## Run
 
-Plain arguments after `--` are passed to the tool unchanged:
-
 ```bash
-otinstaller run dnsgen -- example.com
-```
-
-Typed inputs are mapped to this tool's flags:
-
-```bash
-otinstaller run dnsgen d:example.com
+otinstaller run dnsgen -- --help
 ```
 
 Results are saved to `./results/dnsgen/<target>/`.
