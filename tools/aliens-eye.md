@@ -13,7 +13,7 @@ Hunt down 840+ social media accounts using AI.
 otinstaller install aliens-eye
 ```
 
-otinstaller installs the pip package `aliens_eye` pinned to version `2.7.0` in a dedicated virtualenv.
+otinstaller installs the pip package `aliens_eye` pinned to version `2.7.0` in a dedicated virtualenv. It also installs `selectolax<0.4`.
 
 ## Credentials
 
@@ -79,7 +79,7 @@ Selected profile (truncated):
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run aliens-eye -- --level basic --json-stdout --only-found exampleuser
+otinstaller run aliens-eye -- exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:
