@@ -25,9 +25,7 @@ This tool still needs manual configuration before the first run.
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| email (`e`) | `e:example@example.com` | `example@example.com` (positional) |
-
-otinstaller always adds these arguments first: `email`.
+| email (`e`) | `e:example@example.com` | `email example@example.com` |
 
 ## Run
 
