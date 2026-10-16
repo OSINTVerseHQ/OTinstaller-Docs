@@ -49,13 +49,15 @@ octocat : octocat@users.noreply.github.com
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run zen -- exampleuser https://example.com
+otinstaller run zen -- exampleuser
+otinstaller run zen -- https://example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run zen u:exampleuser url:https://example.com
+otinstaller run zen u:exampleuser
+otinstaller run zen url:https://example.com
 ```
 
 Results are saved to `./results/zen/<target>/`.
