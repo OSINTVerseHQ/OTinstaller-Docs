@@ -17,7 +17,7 @@ otinstaller installs the pip package `telegram-phone-number-checker` pinned to v
 
 ## Credentials
 
-Required keys: `TELEGRAM_API_ID`, `TELEGRAM_API_HASH`.
+Optional keys: `API_ID`, `API_HASH`, `PHONE_NUMBER`.
 
 Keys are stored in `~/.otinstaller/.env`, one `KEY=value` per line. This tool only receives the keys listed above.
 
@@ -46,13 +46,15 @@ Username: johndoe
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run telegram-phone-number-checker -- --phone-numbers +15551234567 --usernames exampleuser
+otinstaller run telegram-phone-number-checker -- --phone-numbers +15551234567
+otinstaller run telegram-phone-number-checker -- --usernames exampleuser
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run telegram-phone-number-checker p:+15551234567 u:exampleuser
+otinstaller run telegram-phone-number-checker p:+15551234567
+otinstaller run telegram-phone-number-checker u:exampleuser
 ```
 
 Results are saved to `./results/telegram-phone-number-checker/<target>/`.

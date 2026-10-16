@@ -17,18 +17,15 @@ otinstaller installs the pip package `telepathy` pinned to version `2.3.4` in a 
 
 ## Credentials
 
-Required keys: `TELEGRAM_API_ID`, `TELEGRAM_API_HASH`.
+No API keys needed.
 
-Keys are stored in `~/.otinstaller/.env`, one `KEY=value` per line. This tool only receives the keys listed above.
-
-After install, otinstaller warns that this tool requires configuration: set these keys before the first run.
+This tool still needs manual configuration before the first run.
 
 ## Input types
 
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
-| username (`u`) | `u:exampleuser` | `--username exampleuser` |
-| phone (`p`) | `p:+15551234567` | `--phone +15551234567` |
+| telegram channel (`tg`) | `tg:examplechannel` | `-t examplechannel` |
 
 ## Example output
 
@@ -46,13 +43,13 @@ Messages analyzed: 5000
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run telepathy -- --username exampleuser --phone +15551234567
+otinstaller run telepathy -- -t examplechannel
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run telepathy u:exampleuser p:+15551234567
+otinstaller run telepathy tg:examplechannel
 ```
 
 Results are saved to `./results/telepathy/<target>/`.

@@ -16,10 +16,11 @@
 | `otinstaller example <tool>` | Show example output |
 | `otinstaller extract <target>` | Extract indicators from saved results |
 | `otinstaller diff <tool> <target>` | Compare the two most recent runs |
-| `otinstaller update` / `--all` / `--check-only` | Update tools |
+| `otinstaller update` / `--all` / `--check-only` | Bring tools to the version this release of otinstaller pins and tested |
 | `otinstaller check-updates` | Check for updates (read-only) |
 | `otinstaller remove <tool>...` / `--all` | Remove tools |
 | `otinstaller keys check` | Check API keys |
+| `otinstaller crash-reports` / `on` / `off` | Show or change opt-in crash reports (off by default) |
 | `otinstaller resume` | Handle interrupted jobs |
 | `otinstaller doctor` | Check the machine |
 | `otinstaller about` | Show the banner, credits and contact |

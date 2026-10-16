@@ -13,7 +13,7 @@ AI-powered OSINT agent with interactive REPL, MCP server, and direct CLI modes. 
 otinstaller install openosint
 ```
 
-otinstaller installs the pip package `openosint` pinned to version `2.30.0` in a dedicated virtualenv.
+otinstaller installs the pip package `openosint` pinned to version `2.30.0` in a dedicated virtualenv. It also installs `holehe` and `sherlock-project`.
 
 ## Credentials
 

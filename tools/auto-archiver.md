@@ -17,8 +17,7 @@ otinstaller installs the pip package `auto-archiver` pinned to version `1.2.9` i
 
 ## Credentials
 
-Required keys: `GOOGLE_API_KEY`, `GOOGLE_CREDENTIALS`.
-Optional keys: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`.
+Optional keys: `GOOGLE_API_KEY`, `GOOGLE_CREDENTIALS`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`.
 
 Keys are stored in `~/.otinstaller/.env`, one `KEY=value` per line. This tool only receives the keys listed above.
 

@@ -13,7 +13,7 @@ Domain name permutation engine for detecting homograph phishing attacks, typo sq
 otinstaller install dnstwist
 ```
 
-otinstaller installs the pip package `dnstwist` pinned to version `20250130` in a dedicated virtualenv.
+otinstaller installs the pip package `dnstwist` pinned to version `20250130` in a dedicated virtualenv. It also installs `dnstwist[full]==20250130`.
 
 ## Credentials
 

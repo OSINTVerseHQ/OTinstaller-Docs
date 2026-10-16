@@ -13,7 +13,7 @@ Fast subdomain enumeration tool using multiple search engines and certificate tr
 otinstaller install sublist3r
 ```
 
-otinstaller installs the pip package `sublist3r` pinned to version `1.0` in a dedicated virtualenv.
+otinstaller clones `https://github.com/aboul3la/Sublist3r.git` at ref `729d649ec5370730172bf6f5314aafd68c874124` into a dedicated virtualenv, then installs the clone itself as a package.
 
 ## Credentials
 
