@@ -41,13 +41,15 @@ Found on: Twitter, GitHub, LinkedIn
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run blackbird -- --username exampleuser --email example@example.com
+otinstaller run blackbird -- --username exampleuser
+otinstaller run blackbird -- --email example@example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run blackbird u:exampleuser e:example@example.com
+otinstaller run blackbird u:exampleuser
+otinstaller run blackbird e:example@example.com
 ```
 
 Results are saved to `./results/blackbird/<target>/`.
