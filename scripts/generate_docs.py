@@ -7,6 +7,9 @@ Usage:
 Requires PyYAML. Writes README.md, getting-started.md, SUMMARY.md and one
 page per registry tool under tools/. Existing pages under tools/ are removed
 first so tools dropped from the registry disappear on regeneration.
+
+A hand-written scripts/notes/<tool>.md, if there is one, is added to the end of
+that tool's page, for usage the registry can't describe.
 """
 
 from __future__ import annotations
@@ -65,7 +68,7 @@ def install_sentence(tool: dict) -> str:
         line = f"otinstaller installs the pip package `{install['package']}`"
         if install.get("version"):
             line += f" pinned to version `{install['version']}`"
-        return line + " in a dedicated virtualenv."
+        return line + " in a dedicated virtualenv." + extras_sentence(install)
     line = f"otinstaller clones `{install['url']}`"
     if install.get("ref"):
         line += f" at ref `{install['ref']}`"
@@ -77,7 +80,24 @@ def install_sentence(tool: dict) -> str:
         parts.append("installs the clone itself as a package")
     if not parts:
         parts.append("installs nothing further (the tool runs from the clone)")
-    return line + " and ".join(parts) + "."
+    return line + " and ".join(parts) + "." + extras_sentence(install)
+
+
+def extras_sentence(install: dict) -> str:
+    """Extra packages and Playwright browsers installed after the tool itself."""
+    text = ""
+    names = [f"`{p}`" for p in install.get("extra_packages") or []]
+    if names:
+        listed = names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+        text += f" It also installs {listed}."
+    browsers = install.get("playwright_browsers") or []
+    if browsers:
+        browser_names = ", ".join(b.capitalize() for b in browsers)
+        text += (
+            f" Then Playwright downloads {browser_names} (the headless shell) into the "
+            "tool's own folder, so `otinstaller remove` deletes it too."
+        )
+    return text
 
 
 def credentials_section(tool: dict) -> str:
@@ -124,25 +144,35 @@ def input_rows(tool: dict) -> list[tuple[str, str, str, str]]:
     return rows
 
 
-def passthrough_args(tool: dict) -> str:
-    args = [str(a) for a in (tool.get("default_args") or [])]
+def passthrough_commands(tool: dict) -> list[str]:
+    """One plain-argument command per input. default_args are left out: otinstaller adds them."""
+    commands = []
     for prefix, flag in (tool.get("input_types") or {}).items():
         value = PREFIX_VALUES.get(prefix, "value")
-        if flag:
-            args.extend([flag, value])
-        else:
-            args.append(value)
-    return " ".join(args)
+        args = f"{flag} {value}" if flag else value
+        commands.append(f"otinstaller run {tool['name']} -- {args}")
+    return commands
 
 
-def typed_args(tool: dict) -> str:
-    return " ".join(
-        f"{prefix}:{PREFIX_VALUES.get(prefix, 'value')}"
+def typed_commands(tool: dict) -> list[str]:
+    """One typed-input command per input (a tool takes one input per run)."""
+    return [
+        f"otinstaller run {tool['name']} {prefix}:{PREFIX_VALUES.get(prefix, 'value')}"
         for prefix in (tool.get("input_types") or {})
-    )
+    ]
 
 
-def tool_page(tool: dict, data_dir: Path) -> str:
+def notes_section(tool: dict, notes_dir: Path | None) -> list[str]:
+    """Hand-written notes for a tool (scripts/notes/<name>.md), added to the end of its page."""
+    if notes_dir is None:
+        return []
+    path = notes_dir / f"{tool['name']}.md"
+    if not path.is_file():
+        return []
+    return [path.read_text().rstrip("\n"), ""]
+
+
+def tool_page(tool: dict, data_dir: Path, notes_dir: Path | None = None) -> str:
     lines = [f"# {tool['display_name']}", "", tool["description"], ""]
     lines += ["## Source", ""]
     lines.append(f"- Repository: https://github.com/{tool['repo']}")
@@ -199,13 +229,13 @@ def tool_page(tool: dict, data_dir: Path) -> str:
             "Plain arguments after `--` are passed to the tool unchanged:",
             "",
             "```bash",
-            f"otinstaller run {tool['name']} -- {passthrough_args(tool)}",
+            *passthrough_commands(tool),
             "```",
             "",
             "Typed inputs are mapped to this tool's flags:",
             "",
             "```bash",
-            f"otinstaller run {tool['name']} {typed_args(tool)}",
+            *typed_commands(tool),
             "```",
         ]
     else:
@@ -215,6 +245,7 @@ def tool_page(tool: dict, data_dir: Path) -> str:
             "```",
         ]
     lines += ["", f"Results are saved to `./results/{tool['name']}/<target>/`.", ""]
+    lines += notes_section(tool, notes_dir)
     return "\n".join(lines)
 
 
@@ -533,6 +564,8 @@ def main() -> None:
 
     tools = load_tools(data_dir)
     out: Path = args.out
+    # Hand-written notes live next to this script, outside the published folders
+    notes_dir = Path(__file__).resolve().parent / "notes"
     tools_dir = out / "tools"
     if tools_dir.exists():
         shutil.rmtree(tools_dir)
@@ -542,7 +575,7 @@ def main() -> None:
     (out / "getting-started.md").write_text(getting_started())
     (out / "SUMMARY.md").write_text(summary(tools))
     for tool in tools:
-        (tools_dir / f"{tool['name']}.md").write_text(tool_page(tool, data_dir))
+        (tools_dir / f"{tool['name']}.md").write_text(tool_page(tool, data_dir, notes_dir))
     if args.readme:
         for path, text in guide_pages(args.readme.read_text()).items():
             (out / path).parent.mkdir(parents=True, exist_ok=True)
