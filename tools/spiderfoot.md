@@ -102,7 +102,7 @@ example output for spiderfoot:
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run spiderfoot -- -u passive -s example.com
+otinstaller run spiderfoot -- -s example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
