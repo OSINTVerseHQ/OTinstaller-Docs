@@ -5,7 +5,7 @@ Find emails, subdomains and names for a domain
 ## Source
 
 - Repository: https://github.com/laramies/theHarvester
-- License: not stated
+- License: GPL-2.0
 
 ## Install
 
