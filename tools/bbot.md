@@ -32,7 +32,7 @@ otinstaller always adds these arguments first: `-y -p subdomain-enum`.
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run bbot -- -y -p subdomain-enum -t example.com
+otinstaller run bbot -- -t example.com
 ```
 
 Typed inputs are mapped to this tool's flags:
