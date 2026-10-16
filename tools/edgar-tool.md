@@ -24,7 +24,6 @@ No API keys needed.
 | Input | Typed input | Tool arguments |
 | --- | --- | --- |
 | query (`q`) | `q:example` | `text-search example` |
-| domain (`d`) | `d:example.com` | `example.com` (positional) |
 
 ## Example output
 
@@ -42,13 +41,13 @@ Filings: 10-K, 10-Q
 Plain arguments after `--` are passed to the tool unchanged:
 
 ```bash
-otinstaller run edgar-tool -- text-search example example.com
+otinstaller run edgar-tool -- text-search example
 ```
 
 Typed inputs are mapped to this tool's flags:
 
 ```bash
-otinstaller run edgar-tool q:example d:example.com
+otinstaller run edgar-tool q:example
 ```
 
 Results are saved to `./results/edgar-tool/<target>/`.
